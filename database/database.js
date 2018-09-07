@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 mongoose.connect(
   "mongodb://localhost/user-reviews",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true },
+  (err, results) => {
+    console.log(err, results);
+  }
 );
 
 const db = mongoose.connection;

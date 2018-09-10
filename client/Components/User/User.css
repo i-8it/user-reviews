@@ -1,0 +1,39 @@
+.users {
+  display: inline-flex;
+  width: 325px;
+}
+
+.image {
+  margin-left: 8%;
+}
+
+.avatars {
+  width: 75px;
+  border-radius: 4px;
+  box-shadow: 0 0px 4px;
+}
+
+.userInfo {
+  margin-left: 10px;
+  font-size: 14px;
+  /* line-height: 1; */
+}
+
+.userLink {
+  font-weight: bold;
+}
+
+.userLoc {
+  color: black;
+  font-weight: bold;
+}
+
+.userBio {
+  color: grey;
+  /* line-height: 1; */
+}
+
+span {
+  color: darkslategrey;
+  font-weight: bold;
+}

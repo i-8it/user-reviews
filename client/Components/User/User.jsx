@@ -31,7 +31,8 @@ class User extends Component {
           </p>
           <p className="userBio">
             <i class="fa fa-camera" aria-hidden="true" />
-            <span>{this.props.user.count_photos}</span> photos
+            <span>{this.props.user.count_photos}</span>
+            photos
           </p>
         </div>
       </div>

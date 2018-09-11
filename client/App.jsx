@@ -40,6 +40,7 @@ class App extends Component {
     console.log("current", this.state.current);
     return (
       <div>
+        <h1>hello</h1>
         <Search handleSearch={this.handleSearch} />
         <ReviewEntry
           allData={this.state.allData}

@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 mongoose.connect(
-  "mongodb://localhost/user-reviews",
+  process.env.MONGODB_URI || "mongodb://localhost/user-reviews",
   { useNewUrlParser: true }
-  // (err, results) => {
-  //   console.log(err, results);
-  // }
 );
 
 const db = mongoose.connection;
 db.once("open", () =>
   console.log(`Connected to MongoDB on ${db.host}: ${db.port}`)
 );
+
+module.exports = mongoose;

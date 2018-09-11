@@ -9,11 +9,19 @@
   },
   "scripts": {
     "build": "webpack --mode production --watch",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "seed": "node ./data/data.js",
+    "test": "jest test"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "fs": "0.0.1-security",
@@ -22,7 +30,8 @@
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -30,7 +39,17 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "^23.5.0",
     "puppeteer": "^1.8.0",
     "style-loader": "^0.23.0",

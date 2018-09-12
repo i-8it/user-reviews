@@ -1,7 +1,7 @@
+/* global document */
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import ReviewEntry from "./Components/ReviewEntry/ReviewEntry.jsx";
-import Search from "./Components/Search/Search.jsx";
+import ReviewEntry from "./ReviewEntry/ReviewEntry.jsx";
+import Search from "./Search/Search.jsx";
 import axios from "axios";
 class App extends Component {
   constructor() {
@@ -37,7 +37,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("current", this.state.current);
     return (
       <div>
         <h1>hello</h1>
@@ -51,4 +50,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App;

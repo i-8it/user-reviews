@@ -41,3 +41,8 @@ span {
   color: darkslategrey;
   font-weight: bold;
 }
+
+#icons {
+  color: #f15c00;
+  text-shadow: 0 1px 1px black;
+}

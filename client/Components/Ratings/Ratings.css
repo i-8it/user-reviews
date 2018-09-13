@@ -1,0 +1,75 @@
+.stars0 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -222px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stars1 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -258px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stars2 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -294px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stars3 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -330px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stars4 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -366px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stars5 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -402px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.date {
+  font-size: 13px;
+  color: grey;
+  font-weight: normal;
+}
+
+.checkins {
+  color: grey;
+  font-size: 12px;
+}
+
+#circle {
+  color: #0077bc;
+  font-size: 14px;
+}

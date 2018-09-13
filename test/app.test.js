@@ -25,3 +25,25 @@ describe("Test the root path", () => {
     10000
   );
 });
+
+describe("/reviews response body", () => {
+  test("It should respond with an object", async () => {
+    const response = await request(app).get("/");
+    expect(response.body).toEqual({});
+    expect(response.statusCode).toBe(200);
+  });
+});
+
+// describe("GET /reviews", () => {
+//   test(
+//     "It responds with an object",
+//     async () => {
+//       const response = await request(app).get("/reviews");
+//       // expect(response.body.length).toBe(500);
+//       expect(response.body).toHaveProperty("name");
+//       expect(response.body).toHaveProperty("review");
+//       expect(response.statusCode).toBe(200);
+//     },
+//     10000
+//   );
+// });

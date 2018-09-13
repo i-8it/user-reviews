@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Review from "../Review/Review.jsx";
-import "./ReviewEntry.css";
+import styles from "./ReviewEntry.css";
 
 class ReviewEntry extends Component {
   constructor(props) {
@@ -11,11 +11,29 @@ class ReviewEntry extends Component {
   render() {
     // console.log(this.props.current);
     return (
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         {this.props.current.map((cur, idx) => {
           return (
             <div>
-              <hr /> <Review cur={cur} /> <hr />
+              <hr /> <Review cur={cur} />
+              <div id={styles.listOfLinks}>
+                {/* <ul>
+                  <li>
+                    <a href="#">uno</a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="#">uno</a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a href="#">uno</a>
+                  </li>
+                  <li>
+                    <a href="#">uno</a>
+                  </li>
+                </ul> */}
+              </div>
             </div>
           );
         })}

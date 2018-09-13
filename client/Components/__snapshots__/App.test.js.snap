@@ -2,9 +2,6 @@
 
 exports[`<App /> should render a <div> 1`] = `
 <div>
-  <h1>
-    hello
-  </h1>
   <Search
     handleSearch={[Function]}
   />

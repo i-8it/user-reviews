@@ -1,0 +1,19 @@
+#reviewBlock {
+  margin: 35px auto;
+}
+
+#ratings {
+  color: red;
+  text-align: center;
+}
+
+#users {
+  width: 300px;
+  margin-top: -52px;
+}
+
+#reviewText {
+  text-align: left;
+  width: 60%;
+  margin: 0 auto;
+}

@@ -39,7 +39,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>hello</h1>
         <Search handleSearch={this.handleSearch} />
         <ReviewEntry
           allData={this.state.allData}

@@ -108,7 +108,7 @@ var restaurant = function() {
   this.name = business[Math.floor(Math.random() * business.length)];
   this.review = {};
   this.review.count_starRatings = faker.random.number({
-    min: 0,
+    min: 1,
     max: 5
   });
   this.review.date = faker.date.recent();

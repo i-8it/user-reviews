@@ -21,17 +21,17 @@ class User extends Component {
           </p>
           <p className={styles.userBio}>
             <i id={styles.icons} className="fa fa-users" aria-hidden="true" />
-            <span>{this.props.user.count_friends}</span>
+            <span> {this.props.user.count_friends} </span>
             friends
           </p>
           <p className={styles.userBio}>
             <i id={styles.icons} className="fa fa-star" aria-hidden="true" />
-            <span>{this.props.user.count_reviews}</span>
+            <span> {this.props.user.count_reviews} </span>
             reviews
           </p>
           <p className={styles.userBio}>
             <i id={styles.icons} className="fa fa-camera" aria-hidden="true" />
-            <span>{this.props.user.count_photos}</span>
+            <span> {this.props.user.count_photos} </span>
             photos
           </p>
         </div>

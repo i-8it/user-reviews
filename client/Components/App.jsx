@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import ReviewEntry from "./ReviewEntry/ReviewEntry.jsx";
 import Search from "./Search/Search.jsx";
 import axios from "axios";
+import styles from "./App.css";
+
 class App extends Component {
   constructor() {
     super();
@@ -38,7 +40,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id={styles.wrapper}>
         <Search handleSearch={this.handleSearch} />
         <ReviewEntry
           allData={this.state.allData}

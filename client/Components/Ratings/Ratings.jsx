@@ -30,8 +30,7 @@ class Ratings extends Component {
             {new Date(this.props.ratings.date)
               .toLocaleString()
               .replace(/:\d\d /, " ")
-              //   .replace(",", " -")
-              .slice(0, 8)}
+              .slice(0, 9)}
           </span>
           {this.props.ratings.count_checkin > 0 ? (
             <p className={styles.checkins}>

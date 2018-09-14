@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Review from "../Review/Review.jsx";
 import styles from "./ReviewEntry.css";
+import Links from "../Links/Links.jsx";
 
 class ReviewEntry extends Component {
   constructor(props) {
@@ -16,24 +17,6 @@ class ReviewEntry extends Component {
           return (
             <div>
               <hr /> <Review cur={cur} />
-              <div id={styles.listOfLinks}>
-                {/* <ul>
-                  <li>
-                    <a href="#">uno</a>
-                  </li>
-                  <hr />
-                  <li>
-                    <a href="#">uno</a>
-                  </li>
-                  <hr />
-                  <li>
-                    <a href="#">uno</a>
-                  </li>
-                  <li>
-                    <a href="#">uno</a>
-                  </li>
-                </ul> */}
-              </div>
             </div>
           );
         })}

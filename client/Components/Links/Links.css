@@ -1,0 +1,18 @@
+#linksContainer {
+  width: 230px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #0073bb;
+}
+
+ul {
+  list-style: none;
+}
+
+#linkIcons {
+  color: #0073bb;
+}
+
+.atags:hover {
+  text-decoration: underline;
+}

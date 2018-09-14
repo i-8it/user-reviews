@@ -1,3 +1,7 @@
+#usersContainer {
+  display: block;
+}
+
 .users {
   display: inline-flex;
   width: 325px;
@@ -10,17 +14,23 @@
 .avatars {
   width: 75px;
   border-radius: 4px;
-  box-shadow: 0 0px 4px;
+  /* box-shadow: 0 0px 4px; */
 }
 
 .userInfo {
   margin-left: 10px;
   font-size: 10px;
-  /* line-height: 1; */
 }
 
 .userLink {
+  font-size: 14px;
   font-weight: bold;
+  color: #0073bb;
+  text-decoration: none;
+}
+
+.userLink:hover {
+  text-decoration: underline;
 }
 
 .userLoc {
@@ -44,3 +54,11 @@ span {
   color: #f15c00;
   text-shadow: 0 1px 1px black;
 }
+
+/* .listOfLinks {
+  visibility: hidden;
+}
+
+.listOfLinks:hover {
+  visibility: visible;
+} */

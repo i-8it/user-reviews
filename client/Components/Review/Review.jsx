@@ -13,14 +13,16 @@ class Review extends Component {
     console.log(this.props.cur.review.user);
     return (
       <div id={styles.reviewBlock}>
-        <div id={styles.ratings}>
-          <Ratings ratings={this.props.cur.review} />
+        <div className={styles.rateAndText}>
+          <div id={styles.ratings}>
+            <Ratings ratings={this.props.cur.review} />
+          </div>
+          <div id={styles.reviewText}>
+            <ReviewText review={this.props.cur.review} />
+          </div>
         </div>
         <div id={styles.users}>
           <User user={this.props.cur.review.user} />
-        </div>
-        <div id={styles.reviewText}>
-          <ReviewText review={this.props.cur.review} />
         </div>
       </div>
     );

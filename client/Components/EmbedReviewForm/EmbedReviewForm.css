@@ -1,0 +1,219 @@
+.formLayout2 {
+  display: grid;
+}
+
+.formLayout2 > label {
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 0 6px;
+}
+
+.formLayout2 > label > span {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.5em;
+  font-weight: normal;
+  display: block;
+}
+
+.inputsForm1 {
+  width: 95%;
+  margin: 0 0 18px;
+  padding: 5px 9px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.29em;
+}
+
+.smallBtn {
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.5em;
+  cursor: pointer;
+  color: white;
+  border-color: #8d0005;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+}
+
+.smallBtn:hover {
+  background-color: #ed0008;
+  background: linear-gradient(#ed0008, #dd1600);
+}
+
+.eReview {
+  cursor: pointer;
+  padding: 11px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.eReview > hr {
+  border: 1px solid #e6e6e6;
+}
+
+.eReview > span {
+  display: inline-flex;
+  margin: 5px;
+  color: #666;
+  margin-top: 0px;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.logo {
+  font-family: "Fjalla One", sans-serif;
+  color: black !important;
+  right: 45px;
+  position: absolute;
+  font-size: 30px !important;
+  top: 295px;
+}
+
+.logo > .fab {
+  color: #d90007;
+}
+
+.ePreview {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.resName {
+  font-weight: bold;
+  font-size: 14px;
+  color: #0073bb;
+  margin-bottom: 6px;
+}
+
+.resName:hover {
+  text-decoration: underline;
+}
+
+.ratings0 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -222px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratings1 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -258px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratings2 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -294px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratings3 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -330px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratings4 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -366px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratings5 {
+  background-image: url("../../../public/stars.png");
+  width: 102px;
+  height: 18px;
+  background-position: 0 -402px;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eUser {
+  display: inline-flex;
+}
+
+.eUser > img {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+}
+
+.eUser > section {
+  margin-left: 8px;
+  position: relative;
+  top: -15px;
+}
+
+section > span > .fa {
+  color: #f15c00 !important;
+  font-size: 12px !important;
+}
+
+section > span > .fa-star {
+  font-size: 9px !important;
+  background: #f15c00;
+  border-radius: 3px;
+  color: white !important;
+  padding: 2px;
+}
+
+section > span {
+  font-weight: bold;
+  font-size: 12px;
+  color: #666;
+}
+
+section > p {
+  margin-bottom: -1px !important;
+}
+
+.eText > p {
+  font-size: 13px;
+}
+
+.eText > p:last-of-type {
+  color: #0073bb;
+  text-align: center;
+}
+
+.eText > p:last-of-type:hover {
+  text-decoration: underline;
+}
+
+.eText > hr {
+  border: 1px solid #e6e6e6;
+}
+
+.date {
+  font-size: 13px;
+  color: grey;
+  font-weight: normal;
+  margin-left: 5px;
+}

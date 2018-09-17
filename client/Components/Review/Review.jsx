@@ -10,7 +10,6 @@ class Review extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.cur.review.user);
     return (
       <div id={styles.reviewBlock}>
         <div className={styles.rateAndText}>
@@ -22,7 +21,11 @@ class Review extends Component {
           </div>
         </div>
         <div id={styles.users}>
-          <User user={this.props.cur.review.user} />
+          <User
+            current={this.props.current}
+            ratings={this.props.cur.review}
+            user={this.props.cur.review.user}
+          />
         </div>
       </div>
     );

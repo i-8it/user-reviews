@@ -11,3 +11,7 @@
 .rateAndText {
   display: block !important;
 }
+
+#reviewBlock:hover #linksContainer > ul {
+  visibility: visible;
+}

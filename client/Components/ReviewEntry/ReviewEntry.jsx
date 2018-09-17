@@ -10,13 +10,12 @@ class ReviewEntry extends Component {
   }
 
   render() {
-    // console.log(this.props.current);
     return (
       <div className={styles.wrapper}>
         {this.props.current.map((cur, idx) => {
           return (
             <div>
-              <hr /> <Review cur={cur} />
+              <hr /> <Review cur={cur} current={this.props.current} />
             </div>
           );
         })}

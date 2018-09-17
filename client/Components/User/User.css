@@ -14,10 +14,10 @@
 .avatars {
   width: 75px;
   border-radius: 4px;
-  /* box-shadow: 0 0px 4px; */
 }
 
 .userInfo {
+  margin-top: -4%;
   margin-left: 10px;
   font-size: 10px;
 }
@@ -37,12 +37,15 @@
   color: black;
   font-weight: bold;
   height: 6px;
+  margin-top: -11px;
+  font-size: 12px;
 }
 
 .userBio {
   color: grey;
   margin-bottom: 0rem;
   font-size: 12px;
+  margin-top: 4px;
 }
 
 span {
@@ -50,15 +53,35 @@ span {
   font-weight: bold;
 }
 
-#icons {
+.userBio > .fa {
   color: #f15c00;
-  text-shadow: 0 1px 1px black;
 }
 
-/* .listOfLinks {
-  visibility: hidden;
+.userBio > .fa-star {
+  font-size: 9px !important;
+  background: #f15c00;
+  border-radius: 3px;
+  color: white !important;
+  padding: 2px;
 }
 
-.listOfLinks:hover {
-  visibility: visible;
-} */
+.closeModal {
+  font-family: "Open Sans Condensed", sans-serif;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  margin-top: -6px;
+  border-radius: 3px;
+  width: 36px;
+  font-size: 36px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.closeModal:hover {
+  opacity: 0.7;
+  background-color: #e8e8e8;
+}

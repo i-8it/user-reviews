@@ -106,6 +106,14 @@ var business = [
 
 var restaurant = function() {
   this.name = business[Math.floor(Math.random() * business.length)];
+  this.ratings = faker.random.number({
+    min: 1,
+    max: 5
+  });
+  this.reviewsCount = faker.random.number({
+    min: 0,
+    max: 750
+  });
   this.review = {};
   this.review.count_starRatings = faker.random.number({
     min: 1,

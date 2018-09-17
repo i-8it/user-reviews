@@ -7,7 +7,6 @@ class Modal extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.isModalOpen);
     return (
       <div
         id={styles.outerStyle}
@@ -15,7 +14,7 @@ class Modal extends Component {
       >
         <div className={styles.overlay} onClick={this.props.closeModal}>
           <div onClick={this.props.closeModal} />
-          <div className={styles.modal}>{this.props.children}</div>
+          <div className={styles.modalBro}>{this.props.children}</div>
         </div>
       </div>
     );

@@ -34,7 +34,7 @@ describe("/reviews response body", () => {
   });
 });
 
-// describe("GET /api", () => {
+// describe.only("GET /api", () => {
 //   test("should get all companies", async done => {
 //     await request(app)
 //       .get("/reviews")

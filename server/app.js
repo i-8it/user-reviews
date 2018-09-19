@@ -3,9 +3,16 @@ const app = express();
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const path = require("path");
+const cors = require("cors");
 const routes = require("../routes/reviews.js");
 require("../database/database.js");
 
+var corsOptions = {
+  origin: "http://localhost:3002",
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use("/:id", express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

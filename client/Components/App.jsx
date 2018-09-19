@@ -24,7 +24,7 @@ class App extends Component {
     var output = this.state.allData.filter(res => {
       return res.name.toLowerCase().includes(inputVal);
     });
-    // this.handleAverage(output);
+    this.handleAverage(output);
     this.setState({
       current: output
     });
@@ -69,7 +69,7 @@ class App extends Component {
       }
     }
     this.setState({ current: updatedReviews });
-    this.handlePost(updatedReviews);
+    // this.handlePost(updatedReviews);
   }
 
   // handlePost(data) {

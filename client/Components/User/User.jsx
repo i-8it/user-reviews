@@ -99,13 +99,12 @@ class User extends Component {
     const formTwo = (
       <EmbedReviewForm
         current={this.props.current}
-        user={this.props.user}
-        ratings={this.props.ratings}
+        average={this.props.average}
       />
     );
     const formThree = (
       <TripleForms
-        user={this.props.user}
+        user={this.props.current.review.user}
         three={this.state.formThree}
         four={this.state.formFour}
         five={this.state.formFive}
@@ -116,35 +115,38 @@ class User extends Component {
         <div className={styles.users}>
           <div className={styles.image}>
             <img
-              src={this.props.user.profile_image}
+              src={this.props.current.review.user.profile_image}
               className={styles.avatars}
             />
           </div>
           <div className={styles.userInfo}>
-            <p className={styles.userLink}>{this.props.user.name}</p>
+            <p className={styles.userLink}>
+              {this.props.current.review.user.name}
+            </p>
             <p className={styles.userLoc}>
-              {this.props.user.city}, {this.props.user.state}
+              {this.props.current.review.user.city},{" "}
+              {this.props.current.review.user.state}
             </p>
             <p className={styles.userBio}>
               <i className="fa fa-users" aria-hidden="true" />
-              <span> {this.props.user.count_friends} </span>
+              <span> {this.props.current.review.user.count_friends} </span>
               friends
             </p>
             <p className={styles.userBio}>
               <i className="fa fa-star" aria-hidden="true" />
-              <span> {this.props.user.count_reviews} </span>
+              <span> {this.props.current.review.user.count_reviews} </span>
               reviews
             </p>
             <p className={styles.userBio}>
               <i className="fa fa-camera" aria-hidden="true" />
-              <span> {this.props.user.count_photos} </span>
+              <span> {this.props.current.review.user.count_photos} </span>
               photos
             </p>
           </div>
         </div>
         <Modal
           isModalOpen={this.state.isModalOpen}
-          // closeModal={this.closeModal}
+          closeModal={this.closeModal}
         >
           <div className={styles.closeModal} onClick={this.closeModal}>
             x
@@ -156,7 +158,7 @@ class User extends Component {
         <div className={styles.listOfLinks}>
           <Links
             openModal={this.openModal}
-            name={this.props.user.name}
+            name={this.props.current.review.user.name}
             handleFormOne={this.handleFormOne}
             handleFormTwo={this.handleFormTwo}
             handleFormThree={this.handleFormThree}

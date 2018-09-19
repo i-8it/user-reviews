@@ -3,25 +3,23 @@ import Review from "../Review/Review.jsx";
 import styles from "./ReviewEntry.css";
 import Links from "../Links/Links.jsx";
 
-class ReviewEntry extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className={styles.wrapper}>
-        {this.props.current.map((cur, idx) => {
-          return (
-            <div>
-              <hr /> <Review cur={cur} current={this.props.current} />
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-}
+const ReviewEntry = props => {
+  return (
+    <div className={styles.wrapper}>
+      {props.current.map((cur, idx) => {
+        return (
+          <div>
+            <hr />{" "}
+            <Review
+              cur={cur}
+              handleCount={props.handleCount}
+              average={props.average}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default ReviewEntry;

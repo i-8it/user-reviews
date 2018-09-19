@@ -3,5 +3,6 @@ const router = express.Router();
 const ctrl = require("../controllers/reviews.js");
 
 router.get("/", ctrl.fetch);
+// router.post("/", ctrl.update);
 
 module.exports = router;

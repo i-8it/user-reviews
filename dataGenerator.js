@@ -1,6 +1,7 @@
 const faker = require("faker");
 var mockData = [];
-
+const fs = require("fs");
+const path = require("path");
 var business = [
   "Minhas Micro Brewery",
   "CK'S BBQ & Catering",
@@ -114,12 +115,27 @@ var restaurant = function() {
     min: 0,
     max: 750
   });
+  this.useful_count = faker.random.number({
+    min: 0,
+    max: 3
+  });
+  this.funny_count = faker.random.number({
+    min: 0,
+    max: 3
+  });
+  this.cool_count = faker.random.number({
+    min: 0,
+    max: 3
+  });
+  this.useful_clicked = false;
+  this.funny_clicked = false;
+  this.cool_clicked = false;
   this.review = {};
   this.review.count_starRatings = faker.random.number({
     min: 1,
     max: 5
   });
-  this.review.date = faker.date.recent();
+  this.review.date = faker.date.between("2015-01-01", "2018-9-30");
   this.review.text_review = faker.lorem.paragraph();
   this.review.count_checkin = faker.random.number({
     min: 0,
@@ -149,4 +165,13 @@ for (var i = 0; i < 500; i++) {
   mockData.push(rest);
 }
 
-module.exports = mockData;
+// module.exports = mockData;
+fs.writeFile(
+  path.join(__dirname, "seeds", "restaurants.json"),
+  JSON.stringify(mockData),
+  err => {
+    if (err) {
+      return console.log(err);
+    }
+  }
+);

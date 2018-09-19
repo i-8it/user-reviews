@@ -11,7 +11,11 @@ ul {
   padding-top: 3px;
 }
 
-#linkIcons {
+.atags > .fa {
+  color: #0073bb;
+}
+
+.atags > .fas {
   color: #0073bb;
 }
 

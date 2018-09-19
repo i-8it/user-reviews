@@ -3,14 +3,5 @@
 exports[`<App /> renders correctly 1`] = `
 <div
   id="wrapper"
->
-  <Search
-    handleSearch={[Function]}
-  />
-  <ReviewEntry
-    average={0}
-    current={Array []}
-    handleCount={[Function]}
-  />
-</div>
+/>
 `;

@@ -1,7 +1,7 @@
 /* global document */
 import React, { Component } from "react";
 import ReviewEntry from "./ReviewEntry/ReviewEntry.jsx";
-import Search from "./Search/Search.jsx";
+// import Search from "./Search/Search.jsx";
 import styles from "./App.css";
 import axios from "axios";
 
@@ -86,31 +86,40 @@ class App extends Component {
   // }
 
   componentDidMount() {
-    axios
-      .get("/reviews")
-      .then(response => {
-        const allData = response.data.map(rev => {
-          rev.vote = false;
-          return rev;
+    var id = window.location.pathname;
+    id = id.substring(1, id.length - 1).toLowerCase();
+    if (id !== undefined) {
+      axios
+        .get(`http://localhost:3002/reviews/${id}`)
+        .then(response => {
+          const current = response.data.map(rev => {
+            rev.vote = false;
+            return rev;
+          });
+          this.setState({
+            current
+          });
+          this.handleAverage(current);
+        })
+        .catch(error => {
+          console.log(error);
         });
-        this.setState({
-          allData
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    }
   }
 
   render() {
+    // console.log(this.state.allData);
+    // console.log(this.state.current);
     return (
       <div id={styles.wrapper}>
-        <Search handleSearch={this.handleSearch} />
-        <ReviewEntry
-          current={this.state.current}
-          handleCount={this.handleCount}
-          average={this.state.average}
-        />
+        {/* <Search handleSearch={this.handleSearch} /> */}
+        {this.state.current.length > 0 && (
+          <ReviewEntry
+            current={this.state.current}
+            handleCount={this.handleCount}
+            average={this.state.average}
+          />
+        )}
       </div>
     );
   }

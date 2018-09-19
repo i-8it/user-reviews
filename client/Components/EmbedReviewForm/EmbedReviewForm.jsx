@@ -27,7 +27,10 @@ const EmbedReviewForm = props => {
       <button className={styles.smallBtn}>Copy Code</button>
       <p className={styles.ePreview}>Preview</p>
       <div className={styles.eReview}>
-        <p className={styles.resName}>{props.current.name}</p>
+        <p className={styles.resName}>
+          {props.current.name.charAt(0).toUpperCase() +
+            props.current.name.slice(1)}
+        </p>
         <div
           className={
             rating === 5

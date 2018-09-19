@@ -104,9 +104,19 @@ var business = [
   "Port of Subs",
   "Chef's Cafe"
 ];
+var increment = 1;
+var newArr = [];
+business.forEach(bizz => {
+  newArr.push([bizz.toLowerCase(), increment]);
+  increment++;
+});
+
+var createReviews = function() {};
 
 var restaurant = function() {
-  this.name = business[Math.floor(Math.random() * business.length)];
+  var resName = newArr[Math.floor(Math.random() * newArr.length)];
+  this.name = resName[0];
+  this.id = resName[1];
   this.ratings = faker.random.number({
     min: 1,
     max: 5

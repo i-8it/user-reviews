@@ -5,7 +5,6 @@ const Modal = props => {
   return (
     <div
       id={styles.outerStyle}
-      onClick={props.closeModal}
       className={props.isModalOpen ? styles.block : styles.none}
     >
       <div className={styles.overlay}>

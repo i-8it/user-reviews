@@ -1,5 +1,5 @@
 .stars0 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -222px;
@@ -9,7 +9,7 @@
 }
 
 .stars1 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -258px;
@@ -19,7 +19,7 @@
 }
 
 .stars2 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -294px;
@@ -29,7 +29,7 @@
 }
 
 .stars3 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -330px;
@@ -39,7 +39,7 @@
 }
 
 .stars4 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -366px;
@@ -49,7 +49,7 @@
 }
 
 .stars5 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -402px;

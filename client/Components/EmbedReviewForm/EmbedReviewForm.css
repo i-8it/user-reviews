@@ -96,7 +96,7 @@
 }
 
 .ratings0 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -222px;
@@ -106,7 +106,7 @@
 }
 
 .ratings1 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -258px;
@@ -116,7 +116,7 @@
 }
 
 .ratings2 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -294px;
@@ -126,7 +126,7 @@
 }
 
 .ratings3 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -330px;
@@ -136,7 +136,7 @@
 }
 
 .ratings4 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -366px;
@@ -146,7 +146,7 @@
 }
 
 .ratings5 {
-  background-image: url("../../../public/stars.png");
+  background-image: url("https://s3-us-west-1.amazonaws.com/yelpreactorreviews/stars.png");
   width: 102px;
   height: 18px;
   background-position: 0 -402px;

@@ -10,7 +10,7 @@ const Modal = props => {
       <div
         id="outer"
         className={styles.overlay}
-        onClick={() => props.windowCloseModal(e)}
+        onClick={e => props.windowCloseModal(e)}
       >
         <div onClick={props.closeModal} />
         <div className={styles.modal}>{props.children}</div>

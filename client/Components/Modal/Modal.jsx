@@ -7,9 +7,13 @@ const Modal = props => {
       id={styles.outerStyle}
       className={props.isModalOpen ? styles.block : styles.none}
     >
-      <div className={styles.overlay}>
+      <div
+        id="outer"
+        className={styles.overlay}
+        onClick={() => props.windowCloseModal(e)}
+      >
         <div onClick={props.closeModal} />
-        <div className={styles.modalBro}>{props.children}</div>
+        <div className={styles.modal}>{props.children}</div>
       </div>
     </div>
   );

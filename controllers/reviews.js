@@ -3,7 +3,6 @@ const Review = require("../models/review.js");
 module.exports = {
   fetch: (req, res) => {
     var id = req.params.nameOrId;
-    console.log(isNaN(id));
     if (!isNaN(id)) {
       //search by name
       Review.find({ id: id }, (err, data) => {
@@ -13,7 +12,6 @@ module.exports = {
       return;
     }
     //search by id
-    console.log(id);
     Review.find({ name: id }, (err, data) => {
       if (err) return console.log(err);
       res.send(data);

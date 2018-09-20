@@ -19,6 +19,7 @@ class User extends Component {
       formFive: false
     };
     this.closeModal = this.closeModal.bind(this);
+    this.windowCloseModal = this.windowCloseModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleFormOne = this.handleFormOne.bind(this);
     this.handleFormTwo = this.handleFormTwo.bind(this);
@@ -31,6 +32,15 @@ class User extends Component {
     this.setState({
       isModalOpen: false
     });
+  }
+
+  windowCloseModal(e) {
+    console.log(e.target.id);
+    if (e.target.id === "outer") {
+      this.setState({
+        isModalOpen: !this.state.isModalOpen
+      });
+    }
   }
 
   openModal() {
@@ -147,6 +157,7 @@ class User extends Component {
         <Modal
           isModalOpen={this.state.isModalOpen}
           closeModal={this.closeModal}
+          windowCloseModal={this.windowCloseModal}
         >
           <div className={styles.closeModal} onClick={this.closeModal}>
             x

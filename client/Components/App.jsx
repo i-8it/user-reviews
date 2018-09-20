@@ -108,8 +108,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.allData);
-    // console.log(this.state.current);
     return (
       <div id={styles.wrapper}>
         {/* <Search handleSearch={this.handleSearch} /> */}

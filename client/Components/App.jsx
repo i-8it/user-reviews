@@ -90,7 +90,7 @@ class App extends Component {
     id = id.substring(1, id.length - 1).toLowerCase();
     if (id !== undefined) {
       axios
-        .get(`http://localhost:3002/reviews/${id}`)
+        .get(`/api/reviews/${id}`)
         .then(response => {
           const current = response.data.map(rev => {
             rev.vote = false;

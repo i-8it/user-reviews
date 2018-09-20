@@ -35,7 +35,6 @@ class User extends Component {
   }
 
   windowCloseModal(e) {
-    console.log(e.target.id);
     if (e.target.id === "outer") {
       this.setState({
         isModalOpen: !this.state.isModalOpen

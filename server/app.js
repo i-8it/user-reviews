@@ -15,7 +15,7 @@ var corsOptions = {
 app.use("/:id", express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use("/reviews", cors(corsOptions), routes);
+app.use("/api/reviews", cors(corsOptions), routes);
 app.use(logger("dev"));
 
 module.exports = app;

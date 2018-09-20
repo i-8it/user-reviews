@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Review from "../Review/Review.jsx";
 import styles from "./ReviewEntry.css";
 import Links from "../Links/Links.jsx";

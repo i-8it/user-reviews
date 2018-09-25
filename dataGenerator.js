@@ -111,8 +111,6 @@ business.forEach(bizz => {
   increment++;
 });
 
-var createReviews = function() {};
-
 var restaurant = function() {
   var resName = newArr[Math.floor(Math.random() * newArr.length)];
   this.name = resName[0];

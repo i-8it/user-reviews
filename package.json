@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "webpack --mode production --watch",
-    "start": "nodemon server/server.js",
-    "seed": "node dataGenerator.js && seed",
+    "start": "node server/server.js",
+    "seed": "nodemon dataGenerator.js && seed",
     "test": "jest test"
   },
   "dependencies": {

@@ -92,6 +92,7 @@ class App extends Component {
       axios
         .get(`/api/reviews/${id}`)
         .then(response => {
+          console.log(response);
           const current = response.data.map(rev => {
             rev.vote = false;
             return rev;

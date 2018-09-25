@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
+//"mongodb://localhost/user-reviews"
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/user-reviews",
   { useNewUrlParser: true }

@@ -9,8 +9,6 @@ const processFile = function (content) {
   // console.log(content);
 
   let million = 1000000;
-  let max = 20 * million;
-  let reviewCount = 0;
   let result = [];
 
   console.log(`fileNum = ${fileNum}`);
@@ -23,25 +21,11 @@ const processFile = function (content) {
   for (var i = ((fileNum - 1) * million); i < (fileNum * million); i++) {
     if (i % 100000 === 0) {
       console.log(i / 100000);
-      // console.log(`wrote ${i / 100000}00,000`);
-    }
-
-    let randomReviews = [Math.floor(Math.random() * content.length)];
-
-    for (var j = 0; j < Math.ceil(Math.random() * 5); j++) {
-      if (reviewCount > max) {
-        reviewCount = 0;
-      }
-      randomReviews.push(reviewCount);
-      reviewCount++;
     }
 
     result.push({
       id: i,
       name: content[i % million],
-      reviews: randomReviews,
-      reviewsCount: randomReviews.length,
-      ratings: randomReviews.length + Math.round(Math.random() * randomReviews.length * 3)
     });
 
   }

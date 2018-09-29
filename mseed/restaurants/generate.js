@@ -25,7 +25,8 @@ const processFile = function (content) {
 
     result.push({
       id: i,
-      name: content[i % million],
+      // name: content[i % million],
+      name: (content[i % million]).toUpperCase(),
     });
 
   }
@@ -47,7 +48,8 @@ const writeIt = function (fNum) {
     }
 
     fs.writeFile(
-      `data/${fileName}.json`,
+      // `data/${fileName}.json`,
+      `data_upper/${fileName}.json`,
       JSON.stringify(processFile(String(data))).slice(1, -1),
       (err, res) => {
         console.log(`${fileName}.json written!`);

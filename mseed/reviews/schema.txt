@@ -1,4 +1,0 @@
-CREATE TABLE reviews(id INTEGER, ratings SMALLINT, reviewsCount SMALLINT, useful_count SMALLINT, funny_count SMALLINT, cool_count SMALLINT, useful_clicked BOOLEAN, funny_clicked BOOLEAN, cool_clicked BOOLEAN, count_starRatings SMALLINT, date VARCHAR(255), text_review TEXT, count_checkin SMALLINT, name VARCHAR(40), city VARCHAR(40), state VARCHAR(40), profile_image VARCHAR(255), count_friends SMALLINT, count_reviews SMALLINT, count_photos SMALLINT, PRIMARY KEY(id));
-
-
-CREATE TABLE restaurants(id INTEGER, name VARCHAR(64), reviews VARCHAR(64), PRIMARY KEY(id));

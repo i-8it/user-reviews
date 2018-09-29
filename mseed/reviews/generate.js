@@ -8,7 +8,7 @@ fileNum = Number(fileNum);
 let chunkSize = 500000;
 let stepSize = 100000;
 
-console.log(`generating reviews${fileNum}.json`);
+console.log(`generating ${fileNum}.json`);
 const imgArr = [
   faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(),
   faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(),
@@ -34,11 +34,10 @@ const generate = function(max) {
       funny_clicked: faker.random.number(1),
       cool_clicked: faker.random.number(1),
       // review: {
-      count_starRatings: faker.random.number(10) / 2,
       date: faker.date.recent(),
       text_review: faker.lorem.sentences(Math.ceil(Math.random() * 3)),
       count_checkin: faker.random.number(1),
-      user: faker.random.number(100000)
+      user: faker.random.number(99999)
     });
   }
   console.log(`done generating ${max} entries! stringifying...`);
@@ -54,7 +53,7 @@ const writeIt = function() {
     JSON.stringify(generate(chunkSize)).slice(1, -1),
     (err, res) => {
       console.log(`${fileName}.json written!`);
-      if (fileNum < 40) {
+      if (fileNum < 60) {
         fileNum++;
         writeIt();
       }

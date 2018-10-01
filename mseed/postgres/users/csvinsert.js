@@ -1,3 +1,5 @@
+// insert 100,000 users
+
 const fs = require('file-system');
 const pg = require('pg');
 
@@ -26,9 +28,7 @@ const insertData = function (fNum) {
       return;
     }
 
-
     // 0,"Tara T.","West Winona","PA","https://s3.amazonaws.com/uifaces/faces/twitter/carlosjgsousa/128.jpg",64,140,381
-
 
     let query = String(data);
     query = query.replace(/'/g, "''");
@@ -51,13 +51,10 @@ const insertData = function (fNum) {
 
       console.log('success!');
 
-      if (fNum < 10) {
-        insertData(fNum + 1);
-        // pgClient.end();
-      }
-
+      // if (fNum < 10) {
+      //   insertData(fNum + 1);
+      // }
     });
-
   });
 };
 

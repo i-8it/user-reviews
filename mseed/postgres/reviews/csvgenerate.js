@@ -1,4 +1,4 @@
-const faker = require('faker');
+  const faker = require('faker');
 const fs = require('file-system');
 
 let fileNum = process.argv[2];
@@ -22,24 +22,26 @@ const imgArrLength = imgArr.length;
 const generate = function(max) {
   let result = [];
   for (var restNum = 0; restNum < max; restNum++) {
-  // for (var restNum = 0; restNum < 10; restNum++) {
     if (restNum % stepSize === 0 && restNum !== 0) {
       console.log(restNum / stepSize);
     }
 
+    let useful = faker.random.number(3);
+    let funny = faker.random.number(3);
+    let cool = faker.random.number(3);
     let date = faker.date.recent();
 
     result += `${((fileNum - 1) * chunkSize + restNum)},\
-${faker.random.number(3)},\
-${faker.random.number(3)},\
-${faker.random.number(3)},\
-${faker.random.number(1)},\
-${faker.random.number(1)},\
-${faker.random.number(1)},\
+${useful},\
+${funny},\
+${cool},\
+${useful === 0 ? 0 : faker.random.number(1)},\
+${funny === 0 ? 0 : faker.random.number(1)},\
+${cool === 0 ? 0 : faker.random.number(1)},\
 "${date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear()}",\
 "${faker.lorem.sentences(Math.ceil(Math.random() * 3))}",\
-${faker.random.number(1)}\
-${faker.random.number(99999)}`;
+${faker.random.number(1)},\
+${faker.random.number(99999)}`; // user # based on max number of users
 
     result = result + '\n';
   }
@@ -56,7 +58,7 @@ const writeIt = function() {
     generate(chunkSize),
     (err, res) => {
       console.log(`${fileName}.csv written!`);
-      if (fileNum < 10) {
+      if (fileNum < 30) {
         fileNum++;
         writeIt();
       }

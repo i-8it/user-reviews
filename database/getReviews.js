@@ -21,7 +21,25 @@ ORDER BY date DESC
 
 
 ///// CASSANDRA /////
-
 /*
-INSERT INTO reviews (id, restaurant_id, cool_clicked, cool_count, funny_clicked, funny_count, name, ratings, reviewscount, useful_clicked, useful_count, user) VALUES ( 10, 11, 0, 0, 1, 1, 'mario', 301, 219, 0, 2, {name: 'lorem'});
+
+INSERT INTO reviews (id, restaurant_id, cool_clicked, cool_count, funny_clicked, funny_count, name, ratings, review, reviewscount, useful_clicked, useful_count, user)
+VALUES ( 10, 11, 0, 0, 1, 1, 'mario', 301,
+{
+  count_starRatings: 3.5,
+  date: '2018-09-28T18:52:54.438Z',
+  text_review: 'lorem ipsum',
+  count_checkin: 1
+},
+219, 0, 2,
+{
+  name: 'lorem',
+  city: 'san francisco',
+  state: 'ca',
+  profile_image: 'http://sdkfopseip.com/o2wkd;ls,/,sclweklwkdmlw/d/f',
+  count_friends: 123,
+  count_reviews: 234,
+  count_photos: 345
+});
+
 */

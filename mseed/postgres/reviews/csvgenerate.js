@@ -5,10 +5,10 @@ let fileNum = process.argv[2];
 if (isNaN(fileNum)) { fileNum = 1; }
 fileNum = Number(fileNum);
 
-let chunkSize = 500000;
-let stepSize = 100000;
+let chunkSize = 1000000;
+let stepSize = chunkSize / 10;
 
-console.log(`generating ${fileNum}.json`);
+console.log(`generating ${fileNum}.csv`);
 const imgArr = [
   faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(),
   faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(),
@@ -22,25 +22,28 @@ const imgArrLength = imgArr.length;
 const generate = function(max) {
   let result = [];
   for (var restNum = 0; restNum < max; restNum++) {
+  // for (var restNum = 0; restNum < 10; restNum++) {
     if (restNum % stepSize === 0 && restNum !== 0) {
       console.log(restNum / stepSize);
     }
-    result.push({
-      id: ((fileNum - 1) * chunkSize + restNum),
-      useful_count: faker.random.number(3),
-      funny_count: faker.random.number(3),
-      cool_count: faker.random.number(3),
-      useful_clicked: faker.random.number(1),
-      funny_clicked: faker.random.number(1),
-      cool_clicked: faker.random.number(1),
-      // review: {
-      date: faker.date.recent(),
-      text_review: faker.lorem.sentences(Math.ceil(Math.random() * 3)),
-      count_checkin: faker.random.number(1),
-      user: faker.random.number(99999)
-    });
+
+    let date = faker.date.recent();
+
+    result += `${((fileNum - 1) * chunkSize + restNum)},\
+${faker.random.number(3)},\
+${faker.random.number(3)},\
+${faker.random.number(3)},\
+${faker.random.number(1)},\
+${faker.random.number(1)},\
+${faker.random.number(1)},\
+"${date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear()}",\
+"${faker.lorem.sentences(Math.ceil(Math.random() * 3))}",\
+${faker.random.number(1)}\
+${faker.random.number(99999)}`;
+
+    result = result + '\n';
   }
-  console.log(`done generating ${max} entries! stringifying...`);
+  console.log(`done generating ${max} entries! writing...`);
   return result;
 };
 
@@ -49,11 +52,11 @@ const writeIt = function() {
     ? '0' + fileNum
     : fileNum;
   fs.writeFile(
-    `data/${fileName}.json`,
-    JSON.stringify(generate(chunkSize)).slice(1, -1),
+    `csv/${fileName}.csv`,
+    generate(chunkSize),
     (err, res) => {
-      console.log(`${fileName}.json written!`);
-      if (fileNum < 29) {
+      console.log(`${fileName}.csv written!`);
+      if (fileNum < 10) {
         fileNum++;
         writeIt();
       }

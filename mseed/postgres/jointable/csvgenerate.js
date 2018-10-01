@@ -15,6 +15,7 @@ const processFile = function () {
   console.log(`from ${((fileNum - 1) * million)} to ${(fileNum * million)}`);
 
   // for each restaurant
+  // for (var i = 0; i < 10; i++) {
   for (var i = ((fileNum - 1) * million); i < (fileNum * million); i++) {
     if (i % 100000 === 0) {
       console.log(i / 100000);
@@ -24,6 +25,7 @@ const processFile = function () {
     for (var j = 0; j < Math.ceil(Math.random() * 5); j++) {
       // how many reviews are there?
       result += `${i},${Math.round(Math.random() * (20 * million))}`;
+      result = result + '\n';
     }
   }
 
@@ -35,10 +37,10 @@ const writeIt = function (fNum) {
     ? '0' + fNum
     : fNum;
   fs.writeFile(
-    `data/${fileName}.json`,
-    JSON.stringify(processFile()).slice(1, -1),
+    `csv/${fileName}.csv`,
+    processFile(),
     (err, res) => {
-      console.log(`${fileName}.json written!`);
+      console.log(`${fileName}.csv written!`);
       if (fNum < 10) {
         fileNum++;
         writeIt(fNum + 1);

@@ -5,7 +5,8 @@ let fileNum = process.argv[2];
 if (isNaN(fileNum)) { fileNum = 1; }
 fileNum = Number(fileNum);
 
-let chunkSize = 1000000;
+// let chunkSize = 1000000;
+let chunkSize = 500000;
 let stepSize = chunkSize / 10;
 
 console.log(`generating ${fileNum}.csv`);
@@ -41,24 +42,25 @@ ${cool === 0 ? 0 : faker.random.number(1)},\
 "${date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear()}",\
 "${faker.lorem.sentences(Math.ceil(Math.random() * 3))}",\
 ${faker.random.number(1)},\
-${faker.random.number(99999)}`; // user # based on max number of users
+${faker.random.number(99999)},\
+${(faker.random.number(9) + 1) / 2}`; //rating
 
     result = result + '\n';
   }
-  console.log(`done generating ${max} entries! writing...`);
+  console.log(`done generating ${max} entries! writing to ${fileName}.csv`);
   return result;
 };
 
 const writeIt = function() {
-  let fileName = (fileNum < 10)
+  let fileName = (fileNum < 40)
     ? '0' + fileNum
     : fileNum;
   fs.writeFile(
-    `csv/${fileName}.csv`,
+    `../../data/reviewsWithRating/${fileName}.csv`,
     generate(chunkSize),
     (err, res) => {
-      console.log(`${fileName}.csv written!`);
-      if (fileNum < 30) {
+      console.log('success!');
+      if (fileNum < 40) {
         fileNum++;
         writeIt();
       }

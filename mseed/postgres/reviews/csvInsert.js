@@ -19,21 +19,19 @@ const insertData = function (fNum) {
     : fNum;
 
   console.log(`read file ${fileName}.csv`);
-  fs.readFile(`csv/${fileName}.csv`, function read(err, data) {
+  fs.readFile(`../../data/reviewsWithRating/${fileName}.csv`, function read(err, data) {
     if (err) {
       console.log('error');
       console.log(err);
       return;
     }
 
-
-
     let query = String(data);
     query = query.replace(/,".*?":/g, ',');
     query = query.replace(/'/g, "''").replace(/"/g, "'");
     query = query.replace(/\n/g, '),(');
     query = query.substr(0, query.length - 2);
-    query = `INSERT INTO reviewscsv (id,useful_count,funny_count,cool_count,useful_clicked,funny_clicked,cool_clicked,date,text_review,count_checkin,user_id) VALUES (${query};`;
+    query = `INSERT INTO reviewsWithRating (id,useful_count,funny_count,cool_count,useful_clicked,funny_clicked,cool_clicked,date,text_review,count_checkin,user_id,starrating) VALUES (${query};`;
 
     console.log(`send query: ${query.substr(0, 500)}...`);
     // console.log(`send query: ...${query.substr(query.length - 500, query.length)}`);
@@ -46,7 +44,7 @@ const insertData = function (fNum) {
 
       console.log('success!');
 
-      if (fNum < 30) {
+      if (fNum < 40) {
         insertData(fNum + 1);
         // pgClient.end();
       }

@@ -18,21 +18,30 @@ const insertData = function (fNum) {
     ? '0' + fNum
     : fNum;
 
-  console.log(`read file ${fileName}.json`);
-  fs.readFile(`data/${fileName}.json`, function read(err, data) {
+  console.log(`read file ${fileName}.csv`);
+  fs.readFile(`csv/${fileName}.csv`, function read(err, data) {
     if (err) {
       console.log('error');
       console.log(err);
       return;
     }
 
+
+    // 0,"Tara T.","West Winona","PA","https://s3.amazonaws.com/uifaces/faces/twitter/carlosjgsousa/128.jpg",64,140,381
+
+
     let query = String(data);
-    query = query.replace(/,".*?":/g, ',');
-    query = query.replace(/{"id":/g, '(').replace(/}/g, ')');
-    query = query.replace(/'/g, "''").replace(/"/g, "'");
-    query = `INSERT INTO reviewscsv (id,useful_count,funny_count,cool_count,useful_clicked,funny_clicked,cool_clicked,date,text_review,count_checkin,user_id) VALUES ${query};`;
+    query = query.replace(/'/g, "''");
+    query = query.replace(/"/g, "'");
+    query = query.replace(/\n/g, '),(');
+    query = query.substr(2, query.length);
+
+
+    query = `INSERT INTO userscsv (id, name, city, state, profile_image, count_friends, count_reviews, count_photos) VALUES ${query});`;
+    query = query.substr(0, query.length - 1) + ';';
 
     console.log(`send query: ${query.substr(0, 500)}...`);
+    // console.log(`send query: ${query.substr(query.length - 500, query.length)}`);
 
     pgClient.query(query, (err, res) => {
       if (err) {
@@ -42,7 +51,7 @@ const insertData = function (fNum) {
 
       console.log('success!');
 
-      if (fNum < 60) {
+      if (fNum < 10) {
         insertData(fNum + 1);
         // pgClient.end();
       }

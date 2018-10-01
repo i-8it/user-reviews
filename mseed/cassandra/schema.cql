@@ -12,6 +12,7 @@ INSERT INTO reviews JSON '{...}'
 */
 
 CREATE TYPE userInfo (
+  id int,
   name varchar,
   city varchar,
   state varchar,
@@ -30,7 +31,6 @@ CREATE TYPE reviewBody (
 
 CREATE TABLE reviews (
   id int,
-  restaurant_id int,
   name varchar,
   ratings int,
   reviewsCount int,
@@ -42,6 +42,5 @@ CREATE TABLE reviews (
   cool_clicked int,
   user userInfo,
   review reviewBody,
-
-  PRIMARY KEY (id, restaurant_id)
+  PRIMARY KEY (id)
 );

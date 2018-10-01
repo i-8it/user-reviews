@@ -1,8 +1,14 @@
 mseed/mock-data
-mseed/restaurantsData
-mseed/reviewsData
+mseed/postgres/restaurants/data
+mseed/postgres/restaurants/data_upper
+mseed/postgres/reviews/data
+mseed/postgres/reviews/csv
+mseed/postgres/users/data
+mseed/postgres/jointable/data
+mseed/group mock data for restaurants
 
 .gitignore
+.gitignore~
 
 ## MAC files ##
 .DS_Store

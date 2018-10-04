@@ -20,6 +20,14 @@ CREATE TYPE userInfo (
   count_friends int,
   count_reviews int,
   count_photos int,
+  ratings int,
+  reviewsCount int,
+  useful_count int,
+  funny_count int,
+  cool_count int,
+  useful_clicked int,
+  funny_clicked int,
+  cool_clicked int
 );
 
 CREATE TYPE reviewBody (
@@ -31,16 +39,10 @@ CREATE TYPE reviewBody (
 
 CREATE TABLE reviews (
   id int,
-  name varchar,
-  ratings int,
-  reviewsCount int,
-  useful_count int,
-  funny_count int,
-  cool_count int,
-  useful_clicked int,
-  funny_clicked int,
-  cool_clicked int,
+  restaurant int,
+  restaurant_name varchar,
+  user_num int,
   user userInfo,
   review reviewBody,
-  PRIMARY KEY (id)
+  PRIMARY KEY (restaurant, user_num)
 );

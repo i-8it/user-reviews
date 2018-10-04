@@ -6,7 +6,7 @@ if (isNaN(fileNum)) { fileNum = 1; }
 fileNum = Number(fileNum);
 
 // let chunkSize = 100000;
-let chunkSize = 100000;
+let chunkSize = 200000;
 let stepSize = chunkSize / 10;
 
 console.log(`generating ${fileNum}.sql`);
@@ -24,14 +24,14 @@ const generate = function(max) {
   // let result = [];
   // let result = 'USE yelp;\n';
   let result = '';
-  let counter = 0;
+  let counter = 1;
   for (var restNum = 0; restNum < max; restNum++) {
     if (restNum % stepSize === 0 && restNum !== 0) {
       console.log(restNum / stepSize);
     }
     let date = new Date(faker.date.recent());
 
-    for (var i = 0; i < faker.random.number(3) + 1; i++) {
+    for (var i = 0; i < faker.random.number(2) + 1; i++) {
       let city = faker.address.city();
       let firstName = faker.name.firstName();
 
@@ -39,27 +39,28 @@ const generate = function(max) {
       // `${((fileNum - 1) * chunkSize + restNum)},\
 `INSERT INTO reviews JSON '{\
 "id": ${counter},\
-"rest": ${((fileNum - 1) * chunkSize + restNum)},\
+"restaurant": ${((fileNum - 1) * chunkSize + restNum)},\
 "review": {\
-"rating": "${faker.random.number(100)}",\
-"date": "${date.getMonth()}/${date.getDate()}/${date.getFullYear()}",\
-"text": "${faker.lorem.sentences(Math.ceil(Math.random() * 3))}",\
-"checkins": ${faker.random.number(1)},\
-"reviewsCnt": ${faker.random.number(100)},\
-"usefulCnt": ${faker.random.number(3)},\
-"funnyCnt": ${faker.random.number(3)},\
-"coolCnt": ${faker.random.number(3)},\
-"usefulClk": ${faker.random.number(1)},\
-"funnyClk": ${faker.random.number(1)},\
-"coolClk": ${faker.random.number(1)}\
+"count_starRatings": "${faker.random.number(100)}",\
+"post_date": "${date.getMonth()}/${date.getDate()}/${date.getFullYear()}",\
+"text_review": "${faker.lorem.sentences(Math.ceil(Math.random() * 3))}",\
+"count_checkin": ${faker.random.number(1)},\
+"reviewsCount": ${faker.random.number(100)},\
+"useful_count": ${faker.random.number(3)},\
+"funny_count": ${faker.random.number(3)},\
+"cool_count": ${faker.random.number(3)},\
+"useful_clicked": ${faker.random.number(1)},\
+"funny_clicked": ${faker.random.number(1)},\
+"cool_clicked": ${faker.random.number(1)}\
 },\
 "user": {\
 "name": "${firstName.replace(/'/g, '')} ${faker.name.lastName()[0]}.",\
 "location": "${city.replace(/'/g, '')}, ${faker.address.stateAbbr()}",\
-"img": "${faker.image.avatar()}",\
-"friendsCnt": "${faker.random.number(100)}",\
-"reviewsCnt": "${faker.random.number(500)}",\
-"photosCnt": "${faker.random.number(500)}",\
+"profile_image": "${faker.image.avatar()}",\
+"count_friends": "${faker.random.number(100)}",\
+"count_reviews": "${faker.random.number(500)}",\
+"count_photos": "${faker.random.number(500)}",\
+"count_photos": "${faker.random.number(500)}",\
 "ratings": "${faker.random.number(500)}"\
 }\
 }';`;
@@ -77,14 +78,14 @@ const writeIt = function() {
     ? '0' + fileNum
     : fileNum;
   fs.writeFile(
-    `data/${fileName}.sql`,
+    `data/${fileName}a.sql`,
     // JSON.stringify(generate(chunkSize)).slice(1, -1),
     // generate(chunkSize),
     'USE yelp;\n' + generate(chunkSize),
     // generate(chunkSize),
     (err, res) => {
       console.log(`${fileName}.json written!`);
-      if (fileNum < 1) {
+      if (fileNum < 50) {
         fileNum++;
         writeIt();
       }

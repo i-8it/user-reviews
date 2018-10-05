@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "webpack --mode production --watch",
-    "start": "nodemon server/server.js",
+    "start": "nodemon backend/server.js",
     "seed": "node dataGenerator.js && seed",
     "test": "jest test"
   },
@@ -26,10 +26,14 @@
     "fs": "0.0.1-security",
     "mongoose": "^5.2.13",
     "morgan": "^1.9.0",
+    "mysql": "^2.16.0",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
+    "pg-hstore": "^2.3.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "sequelize": "^4.39.0",
+    "sequelize-cli": "^4.1.1",
     "styled-components": "^3.4.6",
     "supertest": "^3.3.0"
   },
@@ -62,7 +66,7 @@
     "image-webpack-loader": "^4.3.1",
     "jest": "^23.5.0",
     "node-mongo-seeds": "^3.1.0",
-    "pg": "^7.4.3",
+    "pg": "^7.5.0",
     "puppeteer": "^1.8.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.17.2",

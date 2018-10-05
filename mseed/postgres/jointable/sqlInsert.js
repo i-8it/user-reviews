@@ -19,23 +19,23 @@ const insertData = function (fNum) {
     ? '0' + fNum
     : fNum;
 
-  fs.readFile(`data/${fileName}.json`, (err, res) => {
-    console.log(`read file ${fileName}.json`);
-    // console.log(pgClient););
+  fs.readFile(`data/${fileName}.csv`, (err, res) => {
+    console.log(`read file ${fileName}.csv`);
 
     let query = String(res);
-    query = query.slice(1, -1);
-    query = query.replace(/\[/g, '(').replace(/\]/g, ')');
-    query = 'INSERT INTO jointable (rest, rev) VALUES (' + query + ');';
+    query = query.replace(/\n/g, '),(');
+    query = query.substr(0, query.length - 3);
+    query = 'INSERT INTO jointable2 (rest, rev) VALUES (' + query + ');';
 
     console.log(`send query: ${query.substr(0, 100)}...`);
+    console.log(`... ${query.substr(query.length - 100, query.length)}`);
 
     pgClient.query(query, (err, res) => {
       if (err) {
         console.log('insert error', err.stack);
       } else {
         console.log('success');
-        if (fNum < 10) {
+        if (fNum <= 20) {
           insertData(fNum + 1);
         } else {
           pgClient.end();

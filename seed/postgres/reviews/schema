@@ -1,0 +1,1 @@
+create table reviewsWithRating (id integer, useful_count smallint, funny_count smallint, cool_count smallint, useful_clicked smallint, funny_clicked smallint, cool_clicked smallint, date varchar(16), text_review text, count_checkin smallint, user_id integer, starRating decimal);

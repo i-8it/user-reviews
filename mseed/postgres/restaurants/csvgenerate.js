@@ -33,7 +33,7 @@ const writeIt = function (fNum) {
     ? '0' + fNum
     : fNum;
 
-  fs.readFile(`../../mock-data/${fileName}.json`, function read(err, data) {
+  fs.readFile(`mock-data/${fileName}.json`, function read(err, data) {
     if (err) {
       console.log('error');
       console.log(err);
@@ -41,7 +41,7 @@ const writeIt = function (fNum) {
     }
 
     fs.writeFile(
-      `csv/${fileName}.csv`,
+      `data/${fileName}.csv`,
       // JSON.stringify(processFile(String(data))).slice(1, -1),
       processFile(String(data)),
       (err, res) => {

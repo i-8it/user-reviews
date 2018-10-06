@@ -9,23 +9,31 @@ module.exports = {
       : true;
 
     if (!numberQuery) {
-      nameOrId = nameOrId.replace(/-/g, ' ').replace(/(\d?\d?\d?\d?\d?\d?\d?\d?$)/, '#$1').toUpperCase();
+      nameOrId = nameOrId.replace(/-(\d\d?\d?\d?\d?\d?\d?\d?$)/, '-#$1').replace(/-/g, ' ').toLowerCase();
+      console.log(nameOrId);
     }
 
-    console.log(`Send query: ${nameOrId}`);
+    // console.log(`GET: ${nameOrId}`);
 
     let query = `WITH myReviews AS (\
-      SELECT * FROM reviews WHERE id IN (\
-        SELECT rev FROM jointable WHERE rest=${numberQuery ? '$1' : '(SELECT id FROM restaurants WHERE name=UPPER($1))'}\
+      SELECT DISTINCT * FROM reviews WHERE id IN (\
+        SELECT rev FROM jointable WHERE rest=${numberQuery ? '$1' : '(SELECT id FROM restaurants WHERE name=$1)'}\
       )\
     )\
     SELECT * FROM myReviews INNER JOIN users ON myReviews.user_id = users.id;`;
+/*
+    WITH myReviews AS (SELECT DISTINCT * FROM reviews WHERE id IN (SELECT rev FROM jointable WHERE rest=(SELECT id FROM restaurants WHERE name=UPPER("SMITHAM'S GENERIC PRACTICAL FRESH CHICKEN")))) SELECT * FROM myReviews INNER JOIN users ON myReviews.user_id = users.id;
+    SELECT id FROM restaurants WHERE name=UPPER('SPORER''S HANDMADE REFINED RUBBER CHEESE #87');
+SPORER'S-HANDMADE-REFINED-RUBBER-CHEESE-87
+*/
+
+// console.log(query);
 
     client.query(query,
       [nameOrId], (err, res) => {
         if (err) { console.log(err.stack); return; }
-        let data = res.rows;
-        data = data.map(obj => ({
+        // console.log(res);
+        let data = res.rows.map(obj => ({
           id: obj.id,
           useful_count: obj.useful_count,
           funny_count: obj.funny_count,
@@ -38,7 +46,7 @@ module.exports = {
           review: {
             count_starRatings: obj.starrating,
             date: obj.date,
-            text_review: obj.text_review,
+            text_review: obj.text_review + ' ',
             count_checkin: obj.count_checkin,
             user: {
               name: obj.name,
@@ -51,9 +59,46 @@ module.exports = {
             }
           }
         }));
-
         cb(data);
       }
     );
+  },
+  editReview: (req, cb) => {
+    // UPDATE reviews set useful_clicked=0, funny_clicked=0, cool_clicked=0 WHERE id=111111;
+    let nameOrId = req.params.nameOrId;
+    console.log(req.query);
+    // console.log(params);
+    if (Object.keys(req.query).length > 0) {
+      let params = Object.entries(req.query).map(arr => `${arr[0]}='${arr[1]}'`).join(',');
+
+      let rowToChange = (!isNaN(nameOrId))
+        ? nameOrId
+        : '(SELECT id FROM restaurants WHERE name=$1)';
+      // SELECT id FROM restaurants WHERE name=LOWER($1)
+
+      let query = `UPDATE reviews SET ${params} where id=${rowToChange};`;
+      console.log(query);
+      client.query(query, (err, res) => {
+        if (err) { console.log(err.stack); return; }
+        cb(res);
+        console.log('successfully updated!');
+        // console.log(res);
+      });
+    }
   }
 };
+
+
+
+/*
+Turners-Tasty-Small-Wooden-Bike-326834
+Balistreris-Refined-Licensed-Frozen-Mouse-326835
+Hacketts-Practical-Incredible-Rubber-Computer-326836
+Lowes-Small-Generic-Metal-Computer-326837
+Joness-Sleek-Tasty-Concrete-Hat-326838
+McGlynns-Incredible-Handcrafted-Rubber-Tuna-326839
+Toys-Licensed-Awesome-Cotton-Chair-326840
+Padbergs-Practical-Generic-Fresh-Pizza-326841
+Blandas-Intelligent-Licensed-Fresh-Car-326842
+Dietrichs-Tasty-Incredible-Frozen-Chair-326843
+*/

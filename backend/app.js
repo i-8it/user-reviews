@@ -1,5 +1,4 @@
-// All server functionality on app.js
-// But is executed on server.js
+// All server functionality is on app.js but is executed on server.js
 
 // express
 const express = require('express');
@@ -12,9 +11,7 @@ const path = require('path');
 const cors = require('cors');
 
 // other files
-// require('../database/database.js');
 const routes = require('./routes');
-// console.log(routes);
 
 // body parser
 app.use(bodyParser.urlencoded({ extended: true }));

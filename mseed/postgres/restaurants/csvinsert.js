@@ -19,7 +19,7 @@ const insertData = function (fNum) {
     : fNum;
 
   console.log(`read file ${fileName}.csv`);
-  fs.readFile(`csv/${fileName}.csv`, function read(err, data) {
+  fs.readFile(`data/${fileName}.csv`, function read(err, data) {
     if (err) {
       console.log('error');
       console.log(err);
@@ -31,11 +31,8 @@ const insertData = function (fNum) {
     // query = query.replace(/,/g, ',\'');
     // query = query.replace(/\n/g, '\'),(');
     query = query.replace(/'/g, "''");
-    query = query.replace(/(\d\d?\d?\d?\d?\d?\d?),(.*?)\n/g, '($1,\'$2\'),');
-
-// 5000742,CRISTEN'S HANDMADE CHICKPEAS, GARBANZOS, OR CECI BEANS
-
-    query = `INSERT INTO restaurantscsv (id,name) VALUES ${query}`;
+    query = query.replace(/(\d\d?\d?\d?\d?\d?\d?),(.*?)\n/g, '($1,\'$2\'),').toLowerCase();
+    query = `INSERT INTO restaurantsLower (id,name) VALUES ${query}`;
     query = query.substr(0, query.length - 1) + ';';
 
     console.log(`send query: ${query.substr(0, 500)}...`);

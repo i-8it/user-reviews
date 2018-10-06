@@ -1,7 +1,6 @@
 const ctrl = require('./controllers');
 const router = require('express').Router();
 
-router.get('/:nameOrId', ctrl.getReviews);
-router.post('/:nameOrId', ctrl.editReview);
+router.get('/:', ctrl.getReviews);
 
 module.exports = router;

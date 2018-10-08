@@ -1,6 +1,7 @@
 const ctrl = require('./controllers');
-const router = require('express').Router();
+const restaurantsRouter = require('express').Router();
 
-router.get('/:', ctrl.getReviews);
+restaurantsRouter.get('/:nameOrId', ctrl.getRestaurantReviews);
+// restaurantsRouter.post('/:nameOrId', ctrl.editReview);
 
-module.exports = router;
+module.exports = restaurantsRouter;

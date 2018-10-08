@@ -5,6 +5,8 @@ import ReviewEntry from "./ReviewEntry/ReviewEntry.jsx";
 import styles from "./App.css";
 import axios from "axios";
 
+console.log('loaded newrelic in server.js');
+
 class App extends Component {
   constructor() {
     super();

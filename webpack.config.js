@@ -1,37 +1,47 @@
+// var nodeExternals = require('webpack-node-externals');
+
 module.exports = {
-  entry: __dirname + "/client/Index.jsx",
+  entry: __dirname + '/client/Index.jsx',
   output: {
-    filename: "bundle.js",
-    path: __dirname + "/public"
+    filename: 'bundle.js',
+    path: __dirname + '/public'
   },
+
+
+  devtool: 'eval-source-map',
+
+  // target: 'node',
+  // externals: [nodeExternals()],
+
+
   module: {
     rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
 
       {
         test: /\.css$/,
-        loader: "style-loader"
+        loader: 'style-loader'
       },
       {
         test: /\.css$/,
-        loader: "css-loader",
+        loader: 'css-loader',
         query: {
           modules: true,
-          localIdentName: "[local]"
+          localIdentName: '[local]'
         }
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          "file-loader",
+          'file-loader',
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
               bypassOnDebug: true, // webpack@1.x
               disable: true // webpack@2.x and newer

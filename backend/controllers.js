@@ -1,8 +1,13 @@
 const models = require('./models');
 
 module.exports = {
-  getReviews: (req, res) => {
-    models.getReviews(req.params.nameOrId, (data) => {
+  getReview: (req, res) => {
+    models.getReview(req.params.nameOrId, (data) => {
+      res.send(data);
+    });
+  },
+  getRestaurantReviews: (req, res) => {
+    models.getRestaurantReviews(req.params.nameOrId, (data) => {
       res.send(data);
     });
   },

@@ -11,15 +11,17 @@ const path = require('path');
 const cors = require('cors');
 
 // other files
-const routes = require('./routes');
+const restaurantRoutes = require('./restaurantRoutes');
+const reviewRoutes = require('./reviewRoutes');
 
 // body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.use doesn't set up any routes, just options
+// app.use doesn't set up any restaurantRoutes, just options
 app.use('/:id', express.static('./public'));
-app.use('/api/reviews', routes);
+app.use('/api/restaurants', restaurantRoutes); // gets all reviews for a restaurant
+app.use('/api/reviews', reviewRoutes); // gets a single review
 
 // etc
 app.use(logger('dev'));

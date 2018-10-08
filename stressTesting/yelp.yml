@@ -1,0 +1,16 @@
+config:
+  target: 'http://localhost:3002'
+  phases:
+    - duration: 30
+      arrivalRate: 100
+  payload:
+    path: "randomNumbers.csv"
+    fields:
+      - "number"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - get:
+        url: "/api/reviews/{{ number }}"

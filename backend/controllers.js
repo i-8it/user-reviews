@@ -7,6 +7,7 @@ module.exports = {
     });
   },
   getRestaurantReviews: (req, res) => {
+    console.log('models > getRestaurantReviews');
     models.getRestaurantReviews(req.params.nameOrId, (data) => {
       res.send(data);
     });

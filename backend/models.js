@@ -64,7 +64,9 @@ module.exports = {
     let paramsQuery = Object.entries(req.query).map(pair => `${pair[0]}=${pair[1]}`);
     client.query(`UPDATE reviews SET ${paramsQuery} where id=${req.params.nameOrId}`, [], (err, res) => {
       if (err) { console.log(err); cb('error'); }
-      cb(`Updated ${res.rowCount} row${res.rowCount > 1 ? 's' : ''}`);
+//console.log(res)
+//      cb(`Updated ${res.rowCount} row${res.rowCount > 1 ? 's' : ''}`);
+	cb('updated');
     });
   }
 };
